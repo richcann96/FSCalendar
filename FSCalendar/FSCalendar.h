@@ -151,7 +151,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * FSCalendarDelegateAppearance determines the fonts and colors of components in the calendar, but more specifically. Basically, if you need to make a global customization of appearance of the calendar, use FSCalendarAppearance. But if you need different appearance for different days, use FSCalendarDelegateAppearance.
+ * FSCalendarDelegateAppearance determines the fonts and colors of components in the calendar, but more specificly. Basically, if you need to make a global customization of appearance of the calendar, use FSCalendarAppearance. But if you need different appearance for different days, use FSCalendarDelegateAppearance.
  *
  * @see FSCalendarAppearance
  */
@@ -241,11 +241,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 IB_DESIGNABLE
 @interface FSCalendar : UIView
-
-/**
- * The timezone of the calendar. `defaultTimeZone` by default.
- */
-@property (strong, nonatomic) NSTimeZone *timeZone;
 
 /**
  * The object that acts as the delegate of the calendar.
@@ -514,6 +509,8 @@ IB_DESIGNABLE
  @param sender A UIPanGestureRecognizer instance which controls the scope of the calendar
  */
 - (void)handleScopeGesture:(UIPanGestureRecognizer *)sender;
+
+- (BOOL)isPageInRange:(NSDate *)page;
 
 @end
 
